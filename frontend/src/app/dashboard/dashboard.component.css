@@ -1,0 +1,99 @@
+/* uploads.component.css */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Apply this class when the routerLink is active */
+.active-link {
+  font-weight: bold;
+  color: #ffcc00; /* Example active color */
+}
+
+/* Header styling */
+.upload-file-card {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.upload-file-card .mat-card-header {
+  background-color: #f5f5f5; /* Light gray background for the header */
+  border-bottom: 1px solid #e0e0e0; /* Subtle border for separation */
+}
+
+.upload-file-card .mat-card-title {
+  font-size: 24px; /* Larger font size for the title */
+  font-weight: bold;
+}
+
+/* Container for the list of uploads */
+.uploads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased space between cards for better readability */
+  max-width: 600px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Container for each card */
+.upload-card-container {
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
+}
+
+/* Style for each card */
+.upload-item {
+  width: 100%; /* Full width of the container */
+  max-width: 500px; /* Maximum width of each card */
+  margin-bottom: 15px; /* Increased space below each card */
+  word-wrap: break-word; /* Ensures long words or URLs break to fit the container */
+}
+
+/* Styling for the image in the card */
+.upload-image {
+  object-fit: cover; /* Ensure the image covers the space */
+  height: 200px; /* Set a fixed height for images */
+  width: 100%; /* Full width of the card */
+}
+
+/* Style for the card content */
+.upload-item mat-card-content {
+  padding: 16px; /* Add padding inside the card */
+  font-size: 16px; /* Set font size for the content */
+  line-height: 1.5; /* Increase line height for readability */
+  word-wrap: break-word; /* Ensures long words or URLs break to fit the container */
+}
+
+/* Style for description text */
+.upload-item p {
+  margin: 8px 0; /* Add vertical margin for spacing */
+  font-size: 16px; /* Set font size for paragraph text */
+  color: #333; /* Dark gray color for better readability */
+  white-space: normal; /* Ensure the text wraps normally */
+  word-wrap: break-word; /* Break long words/URLs to fit the card */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+
+/* Strong text in description */
+.upload-item p strong {
+  font-weight: bold; /* Make the strong text bold */
+  color: #444; /* Slightly darker color for emphasis */
+}
+
+/* Pagination controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  margin: 0 15px; /* Space between pagination buttons */
+}
+
+/* No uploads message */
+.no-uploads {
+  text-align: center;
+  font-size: 18px;
+  color: #757575; /* Subtle text color */
+}

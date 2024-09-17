@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" *ngIf="!isLoginPage()">
+  <span class="toolbar-title">Dashboard</span>
+
+  <span class="spacer"></span> <!-- To push actions to the right -->
+
+  <ng-container *ngIf="isAuthenticated(); else guest">
+    <!-- Authenticated user links -->
+    <button mat-button [routerLink]="['/dashboard']" routerLinkActive="active-link">Home</button>
+    <button mat-button [routerLink]="['/account']" routerLinkActive="active-link">My Account</button>
+    <button mat-button [routerLink]="['/upload']" routerLinkActive="active-link">Upload File</button>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+
+  <ng-template #guest>
+    <!-- Guest user links -->
+    <button mat-button [routerLink]="['/login']" routerLinkActive="active-link">Login</button>
+    <button mat-button [routerLink]="['/register']" routerLinkActive="active-link">Register</button>
+  </ng-template>
+</mat-toolbar>
+
+<!-- Routed views will be displayed here -->
+<router-outlet></router-outlet>

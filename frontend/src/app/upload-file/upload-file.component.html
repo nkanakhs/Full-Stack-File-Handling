@@ -1,0 +1,29 @@
+<!-- Upload File Card -->
+<mat-card class="upload-file-card">
+  <mat-card-header>
+    <mat-card-title>Upload File</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" class="upload-form">
+      <!-- Custom File Input Button -->
+      <div class="custom-file-input">
+        <button mat-raised-button color="warn" (click)="fileInput.click()">Choose File</button>
+        <input #fileInput type="file" (change)="onFileChange($event)" hidden />
+      </div>
+
+      <!-- Image Preview -->
+      <div *ngIf="previewUrl" class="image-preview">
+        <img [src]="previewUrl" alt="Preview" class="preview-img" />
+      </div>
+
+      <!-- Description Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="description" name="description" rows="4"></textarea>
+      </mat-form-field>
+
+      <!-- Submit Button -->
+      <button mat-raised-button color="primary" type="submit">Upload</button>
+    </form>
+  </mat-card-content>
+</mat-card>

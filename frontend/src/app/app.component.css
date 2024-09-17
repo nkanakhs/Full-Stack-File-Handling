@@ -1,0 +1,16 @@
+/* Ensure toolbar title is on the left */
+.toolbar-title {
+    flex: 1;
+    font-weight: bold;
+  }
+  
+  /* Spacer to push items to the right */
+  .spacer {
+    flex: 1;
+  }
+  
+  /* Optionally, ensure buttons are properly aligned */
+  mat-toolbar button {
+    margin-left: 10px; /* Adjust as needed */
+  }
+  

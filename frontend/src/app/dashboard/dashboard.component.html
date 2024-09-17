@@ -1,0 +1,32 @@
+<!-- dashboard.component.html -->
+<mat-card class="upload-file-card">
+  <mat-card-header>
+    <mat-card-title>Your Uploaded Files</mat-card-title>
+  </mat-card-header>
+</mat-card>
+
+<div *ngIf="uploads.length > 0" class="uploads-list">
+  <div *ngFor="let upload of uploads" class="upload-card-container">
+    <mat-card class="upload-item">
+      <img mat-card-image [src]="upload.file_url" alt="{{ upload.filename }}">
+      <mat-card-content>
+        <p><strong>Description:</strong> {{ upload.description }}</p>
+        <p><strong>File URL:</strong> <a [href]="upload.file_url" target="_blank">{{ upload.file_url }}</a></p>
+        <p><strong>Owner:</strong> {{ upload.owner }}</p>
+        <p><strong>Upload Date:</strong> {{ upload.upload_date | date:'medium' }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination-controls">
+    <button mat-button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button mat-button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>
+
+<!-- Optional: Add a loading spinner or message for when there are no uploads -->
+<div *ngIf="uploads.length === 0">
+  <p>No uploads found.</p>
+</div>

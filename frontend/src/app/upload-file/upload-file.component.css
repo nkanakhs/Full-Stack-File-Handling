@@ -1,0 +1,61 @@
+/* CSS for upload file card */
+.upload-file-card {
+    max-width: 600px; /* Set a max-width for the card */
+    margin: 20px auto; /* Center card horizontally and add top margin */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better look */
+    border-radius: 8px; /* Rounded corners for the card */
+  }
+  
+  /* Centering the card vertically and horizontally */
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensure children take full width */
+  }
+  
+  /* Custom File Input Button Styles */
+  .custom-file-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .custom-file-input button {
+    margin-right: 16px;
+  }
+  
+  input[type="file"] {
+    display: none; /* Hide the default file input */
+  }
+  
+  /* Description Field Styling */
+  mat-form-field {
+    width: 100%; /* Ensure form field takes full width of the card */
+    margin-bottom: 16px; /* Add margin between fields */
+  }
+  
+  mat-form-field textarea {
+    width: 100%; /* Ensure textarea takes full width of the form field */
+    resize: vertical; /* Allow vertical resizing only */
+  }
+  
+  /* Adjust button styling for a consistent look */
+  button.mat-raised-button {
+    margin-top: 16px; /* Add space above the button */
+  }
+  /* Image Preview Styling */
+.image-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.image-preview img {
+  width: 100%;
+  max-width: 400px; /* Restrict the max width of the preview image */
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for preview image */
+}
