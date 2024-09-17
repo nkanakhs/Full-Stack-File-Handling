@@ -1,0 +1,40 @@
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://db:27017/tododb
+      - SECRET_KEY=supersecretjwtkey
+      - WEATHER_API_KEY=your_openweathermap_api_key
+    depends_on:
+      - db
+    volumes:
+      - .:/app  # Maps the current directory to the /app directory in the container
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+
+  
+  # Frontend (Angular) service
+  frontend:
+    build:
+      context: ./frontend  # Use the Dockerfile inside the frontend directory
+    ports:
+      - "4201:4200"  # Angular dev server port
+      - "49153:49153"
+    volumes:
+      - ./frontend:/usr/src/app
+    networks:
+      - backend-network
+    command: npm run start
+
+
+networks:
+  backend-network:
+    driver: bridge  

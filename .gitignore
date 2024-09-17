@@ -1,0 +1,28 @@
+# Ignore virtual environment
+venv/
+
+# Ignore uploads folder
+uploads/
+
+# Ignore data folder
+data/
+
+# Ignore node_modules and other build directories
+node_modules/
+dist/
+out-tsc/
+coverage/
+
+# Ignore e2e test output
+e2e/
+
+# Ignore Angular service worker cache
+.ngsw/
+
+# IDEs and editors
+.vscode/
+.idea/
+.DS_Store
+
+# Environment variables
+.env
